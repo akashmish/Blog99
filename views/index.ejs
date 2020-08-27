@@ -1,0 +1,23 @@
+<%- include("partials/header") %>
+
+
+
+<h1 style="text-align: center;">The Daily digest</h1>
+<br> 
+<br>
+<% blogs.forEach(function(blog){ %>
+    <div >
+        <br>
+        <h2 style="margin-left: 20%; margin-right: 20%;"><%= blog.title %></h2>
+        <div style="margin-left: 20%; margin-right: 20%;">
+            <img src="<%= blog.image %>" class="img-thumbnail" style="width:696px; height:295px" >
+        </div>
+       <div class="d-flex justify-content-start">
+        <span style="margin-left: 20%; margin-right: 20%;"> <%= blog.created.toDateString() %></span>
+        <a href="/blogs/<%= blog._id %>">Read more</a>
+    </div>
+        <hr>
+        <br>
+    </div>
+<% }) %>
+<%- include("partials/footer") %>
